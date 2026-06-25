@@ -2159,7 +2159,7 @@
             width: 100%;
             max-width: 1500px;
             padding: 0 clamp(10px, 1.5vw, 20px);
-            overflow: hidden;
+            overflow: visible;
             scroll-snap-type: none;
             -webkit-overflow-scrolling: auto;
         }
@@ -2183,7 +2183,9 @@
             align-items: center;
             justify-content: center;
             gap: clamp(4px, 0.8vw, 6px);
-            overflow: hidden;
+            overflow: visible;
+            position: relative;
+            z-index: 1;
             min-height: clamp(280px, 30vw, 330px);
             scroll-snap-align: center;
         }
@@ -2194,6 +2196,7 @@
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.99) 0%, rgba(232, 244, 255, 0.95) 100%);
             box-shadow: 0 14px 34px rgba(16, 42, 67, 0.16), 0 0 0 3px rgba(16, 42, 67, 0.12);
             transform: scale(1.03);
+            z-index: 3;
         }
 
         .char-card.selected {
@@ -2201,6 +2204,7 @@
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.99) 0%, rgba(213, 232, 255, 0.96) 100%);
             box-shadow: 0 16px 38px rgba(16, 42, 67, 0.2), 0 0 0 4px rgba(16, 42, 67, 0.16);
             transform: scale(1.04);
+            z-index: 3;
         }
 
         .char-svg {
