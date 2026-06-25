@@ -1449,11 +1449,15 @@
             overflow-y: auto;
             overflow-x: hidden;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: thin;
-            scrollbar-gutter: stable;
-            padding-right: 12px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding-right: 0;
             flex: 1 1 auto;
             min-height: 0;
+        }
+
+        .description-card .card-content::-webkit-scrollbar {
+            display: none;
         }
 
         .question-card {
@@ -1473,11 +1477,15 @@
             overflow-y: auto;
             overflow-x: hidden;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: thin;
-            scrollbar-gutter: stable;
-            padding-right: 12px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding-right: 0;
             gap: 12px;
             margin-top: 6px;
+        }
+
+        .question-scroll-area::-webkit-scrollbar {
+            display: none;
         }
 
         .question-card .card-content {
@@ -1595,40 +1603,25 @@
             }
         }
 
-        /* Uniform scrollbar styling for all card scrollable areas */
+        /* Hide scrollbar visually while keeping scrolling enabled */
         .card-content,
         .question-card,
+        .question-scroll-area,
         .cards-container .card,
         #quiz-cards-overlay .content-card {
-            scrollbar-width: thin;
-            scrollbar-color: rgba(120,80,36,0.45) rgba(255,255,255,0.15);
-            scrollbar-gutter: stable both-edges;
-            padding-right: 12px; /* ensure thumb doesn't cover text */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding-right: 0;
         }
 
         .card-content::-webkit-scrollbar,
         .question-card::-webkit-scrollbar,
+        .question-scroll-area::-webkit-scrollbar,
         .cards-container .card::-webkit-scrollbar,
         #quiz-cards-overlay .content-card::-webkit-scrollbar {
-            width: 10px;
-            height: 10px;
-        }
-
-        .card-content::-webkit-scrollbar-track,
-        .question-card::-webkit-scrollbar-track,
-        .cards-container .card::-webkit-scrollbar-track,
-        #quiz-cards-overlay .content-card::-webkit-scrollbar-track {
-            background: rgba(255,255,255,0.15);
-            border-radius: 999px;
-        }
-
-        .card-content::-webkit-scrollbar-thumb,
-        .question-card::-webkit-scrollbar-thumb,
-        .cards-container .card::-webkit-scrollbar-thumb,
-        #quiz-cards-overlay .content-card::-webkit-scrollbar-thumb {
-            background: rgba(120,80,36,0.45);
-            border-radius: 999px;
-            border: 2px solid rgba(255,255,255,0.6);
+            display: none;
+            width: 0;
+            height: 0;
         }
 
         .card-content p {
