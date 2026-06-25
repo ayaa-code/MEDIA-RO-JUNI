@@ -2188,14 +2188,15 @@
         }
 
         .char-card:hover,
-        .char-card:focus-visible {
+        .char-card:focus-visible,
+        .char-card.selected {
             border-color: var(--deep-blue);
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 14px 34px rgba(16, 42, 67, 0.16);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.99) 0%, rgba(232, 244, 255, 0.95) 100%);
+            box-shadow: 0 14px 34px rgba(16, 42, 67, 0.16), 0 0 0 3px rgba(16, 42, 67, 0.12);
         }
 
-        .char-card:active {
-            box-shadow: 0 10px 24px rgba(16, 42, 67, 0.14);
+        .char-card.selected {
+            box-shadow: 0 16px 38px rgba(16, 42, 67, 0.2), 0 0 0 4px rgba(16, 42, 67, 0.16);
         }
 
         .char-svg {
@@ -3813,6 +3814,13 @@
             initCharList();
         }
 
+        function selectAvatarCard(card) {
+            document.querySelectorAll('.char-card.selected').forEach(selectedCard => {
+                selectedCard.classList.remove('selected');
+            });
+            card.classList.add('selected');
+        }
+
         function initCharList() {
             const grid = document.getElementById('selection-grid');
             grid.innerHTML = '';
@@ -3827,7 +3835,10 @@
             characters.forEach(c => {
                 const card = document.createElement('div');
                 card.className = 'char-card';
-                card.onclick = () => showInstructions(c.id);
+                card.onclick = () => {
+                    selectAvatarCard(card);
+                    showInstructions(c.id);
+                };
                 const svgWrapper = document.createElement('div');
                 svgWrapper.innerHTML = charAssets[c.id];
                 const charName = document.createElement('p');
