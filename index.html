@@ -2175,7 +2175,7 @@
             border-radius: 20px;
             text-align: center;
             cursor: pointer;
-            transition: border-color 0.24s ease, box-shadow 0.24s ease, background-color 0.24s ease;
+            transition: border-color 0.24s ease, box-shadow 0.24s ease, background-color 0.24s ease, transform 0.24s ease;
             box-shadow: 0 16px 42px rgba(93,140,210,0.22);
             display: flex;
             flex-direction: column;
@@ -2188,15 +2188,18 @@
         }
 
         .char-card:hover,
-        .char-card:focus-visible,
-        .char-card.selected {
+        .char-card:focus-visible {
             border-color: var(--deep-blue);
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.99) 0%, rgba(232, 244, 255, 0.95) 100%);
             box-shadow: 0 14px 34px rgba(16, 42, 67, 0.16), 0 0 0 3px rgba(16, 42, 67, 0.12);
+            transform: scale(1.03);
         }
 
         .char-card.selected {
+            border-color: var(--deep-blue);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.99) 0%, rgba(213, 232, 255, 0.96) 100%);
             box-shadow: 0 16px 38px rgba(16, 42, 67, 0.2), 0 0 0 4px rgba(16, 42, 67, 0.16);
+            transform: scale(1.04);
         }
 
         .char-svg {
