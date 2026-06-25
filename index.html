@@ -2151,17 +2151,17 @@
         /* Character Grid */
         .char-grid {
             display: flex;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: clamp(6px, 0.6vw, 10px);
+            gap: clamp(10px, 1.2vw, 16px);
             margin: clamp(10px, 1.2vw, 18px) auto clamp(14px, 1.2vw, 20px);
             width: 100%;
             max-width: 1500px;
             padding: 0 clamp(10px, 1.5vw, 20px);
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
+            overflow: hidden;
+            scroll-snap-type: none;
+            -webkit-overflow-scrolling: auto;
         }
 
         .char-card {
